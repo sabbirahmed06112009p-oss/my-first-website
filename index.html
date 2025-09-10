@@ -1,83 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SABBIR AHMED's WEBSITE</title>
-<link rel="stylesheet" href="style.css"> </head>
-<body>
-    <h1>HELLO EVERYONE!</h1>
-    <button>CLICK HERE</button> 
-    <p>আমি এখন ওয়েবসাইট বানানো শুরু করেছি!</p>
-<p>কিছু যৌগের আনবিক সংকেত এবং রাসায়নিক গঠনঃ</p>
-    <p>1. বেনজিন (C_6H_6)</p>
-<p>এটা একটা ষড়ভুজ (hexagon) আকৃতির বলয় বা রিং।</p>
-<p> </p>
-<p>      H</p>
-<p>      |</p>
-<p>   H--C---C--H</p>
-<p>  / \ / \ /</p>
-<p> C---C---C</p>
-<p>  \ / \ /</p>
-<p>   H--C---C--H</p>
-<p>      |</p>
-<p>      H</p>
-<p> </p>
-<p></p>2. ইথানল (C_2H_5OH)
-<p> </p>
-<p></p>    H   H
-<p></p>    |   |
-<p></p>H - C - C - O - H
-<p></p>    |   |
-<p></p>    H   H
-<p> </p>
-<p></p>3. ন্যাপথালিন (C_10H_8)
-<p></p>এটা দুটো বেনজিন রিং একসাথে জুড়ে থাকে।
-<p> </p>
-<p></p>    H     H
-<p></p>    |     |
-<p></p>H - C---C---C - H
-<p></p>  \ / \ / \ /
-<p></p>   C---C---C
-<p></p>  / \ / \ / \
-<p></p>H - C---C---C - H
-<p></p>    |     |
-<p></p>    H     H
-<p> </p>
-<p></p>4. ফেরাস সালফেট (FeSO_4)
-<p></p>এটা একটা আয়নিক যৌগ। এখানে Fe2+ এবং SO_4 2− আয়ন থাকে।
-<p> </p>
-<p></p>Fe^{2+}   [ O
-<p></p>            ||
-<p></p>          O - S - O ]^{2-}
-<p></p>            ||
-<p></p>            O
-<p> </p>
-<p></p>5. জিঙ্ক কার্বনেট (ZnCO_3) এটাও একটা আয়নিক যৌগ। এখানে Zn 2+ এবং CO_3 2− আয়ন থাকে।
-<p> </p>
-<p></p>Zn^{2+}   [  O
-<p></p>             ||
-<p></p>           O - C - O ]^{2-}
-<p> </p>
-<p></p>6. অ্যামোনিয়াম সালফেট ((NH_4)_2SO_4)
-<p></p>এটাও আয়নিক। এখানে দুটো NH_4+ এবং একটা SO_4 2− আয়ন থাকে।
-<p> </p>
-<p></p>        H       H
-<p></p>        |       |
-<p></p>[ H - N - H ]+  [ H - N - H ]+
-<p></p>        |       |
-<p></p>        H       H
-<p> </p>
-<p></p>      [ O
-<p></p>        ||
-<p></p>      O - S - O ]^{2-}
-<p></p>        ||
-<p></p>        O
-<p> </p>
-<p></p>7. সোডিয়াম বাইকার্বনেট (NaHCO_3) এটাও একটা আয়নিক যৌগ। এখানে Na+ এবং HCO_3− আয়ন থাকে।
-<p> </p>
-<p></p>Na^{+}    [ O
-<p></p>            ||
-<p></p>          O - C - O - H ]^{-}</p>
-    <script src="script.js"></script> </body>
+    <title>SANS</title>
+    <style>
+        :root {
+            --bg-dark: #1d2024;
+            --bg-light: #25292e;
+            --primary-color: #4a6fa5;
+            --secondary-color: #6c8fc7;
+            --accent-color: #8ab3ff;
+            --text-primary: #f0f2f5;
+            --text-secondary: #b8bbc0;
+            --card-bg: #25292e;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --premium-color: #8ab3ff;
+            --premium-gradient: linear-gradient(135deg, #6c8fc7, #8ab3ff);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            padding: 0;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--bg-light);
+            padding: 18px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--premium-color);
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--premium-gradient);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 0 80px;
+            background: var(--premium-gradient);
+            margin-bottom: 50px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 18px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 680px;
+            margin: 0 auto;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+            color: var(--accent-color);
+            font-size: 2.3rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .intro {
+            padding: 55px 0;
+            margin-bottom: 50px;
+        }
+
+        .intro-content {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .intro-content p {
+            margin-bottom: 22px;
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .compounds {
+            padding: 50px 0 70px;
+        }
+
+        .compound-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+            margin-top: 45px;
+        }
+
+        .compound-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .compound-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            border-color: rgba(138, 179, 255, 0.2);
+        }
+
+        .compound-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            font-size: 1.55rem;
+            font-weight: 700;
+        }
+
+        .formula {
+            color: var(--accent-color);
+            font-weight: 650;
+            margin-bottom: 18px;
+            display: block;
+            font-size: 1.15rem;
+            background: rgba(138, 179, 255, 0.1);
+            padding: 8px 14px;
+            border-radius: 6px;
+            width: fit-content;
+        }
+
+        .structure {
+            background: var(--bg-dark);
+            padding: 18px;
+            border-radius: 8px;
+            margin: 18px 0;
+            font-family: 'Fira Code', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            border: 1px solid var(--border-color);
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px;
+        }
+
+        .description {
+            color: var(--text-secondary);
+            margin-top: 18px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: var(--bg-light);
+            padding: 40px 0;
+            margin-top: auto;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 18px;
+            }
+
+            nav ul {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .hero {
+                padding: 70px 0 60px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .compound-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body oncontextmenu="return false" onkeydown="return false">
+    <header>
+        <div class="container header-content">
+            <div class="logo">SANS</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#compounds">Compounds</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Chemical Compound Explorer</h1>
+            <p>Discover the molecular structures and properties of important chemical compounds</p>
+        </div>
+    </section>
+
+    <section class="intro">
+        <div class="container">
+            <div class="intro-content">
+                <h2 class="section-title">Molecular Insights</h2>
+                <p>Welcome to SANS, your guide to understanding chemical structures and their significance in science and industry.</p>
+                <p>This resource provides detailed information about various compounds, from simple organic molecules to complex ionic compounds.</p>
+                <p>Explore the fascinating architecture of molecules that form the foundation of modern chemistry.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="compounds" id="compounds">
+        <div class="container">
+            <h2 class="section-title">Chemical Compounds</h2>
+
+            <div class="compound-grid">
+                <div class="compound-card">
+                    <h3>Benzene</h3>
+                    <span class="formula">C₆H₆</span>
+                    <div class="structure">      H
+      |
+   H--C---C--H
+  / \ / \ /
+ C---C---C
+  \ / \ /
+   H--C---C--H
+      |
+      H</div>
+                    <p class="description">A hexagonal ring structure with delocalized π electrons, fundamental in organic chemistry.</p>
+                </div>
+
+                <div class="compound-card">
+                    <h3>Ethanol</h3>
+                    <span class="formula">C₂H₅OH</span>
+                    <div class="structure">    H   H
+    |   |
+H - C - C - O - H
+    |   |
+    H   H</div>
+                    <p class="description">A simple alcohol with widespread use as solvent, antiseptic, and recreational beverage.</p>
+                </div>
+
+                <div class="compound-card">
+                    <h3>Naphthalene</h3>
+                    <span class="formula">C₁₀H₈</span>
+                    <div class="structure">    H     H
+    |     |
+H - C---C---C - H
+  \ / \ / \ /
+   C---C---C
+  / \ / \ / \
+H - C---C---C - H
+    |     |
+    H     H</div>
+                    <p class="description">A polycyclic aromatic hydrocarbon consisting of two fused benzene rings.</p>
+                </div>
+
+                <div class="compound-card">
+                    <h3>Ferrous Sulfate</h3>
+                    <span class="formula">FeSO₄</span>
+                    <div class="structure">Fe²⁺   [ O
+            ||
+          O - S - O ]²⁻
+            ||
+            O</div>
+                    <p class="description">An ionic compound used as an iron supplement and in water treatment processes.</p>
+                </div>
+
+                <div class="compound-card">
+                    <h3>Zinc Carbonate</h3>
+                    <span class="formula">ZnCO₃</span>
+                    <div class="structure">Zn²⁺   [  O
+             ||
+           O - C - O ]²⁻</div>
+                    <p class="description">A mineral compound used in rubber production, ointments, and as a dietary supplement.</p>
+                </div>
+
+                <div class="compound-card">
+                    <h3>Ammonium Sulfate</h3>
+                    <span class="formula">(NH₄)₂SO₄</span>
+                    <div class="structure">        H       H
+        |       |
+[ H - N - H ]⁺  [ H - N - H ]⁺
+        |       |
+        H       H
+
+      [ O
+        ||
+      O - S - O ]²⁻
+        ||
+        O</div>
+                    <p class="description">A widely used nitrogen fertilizer with high solubility and sulfur content.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="about">
+        <div class="container">
+            <div class="footer-content">
+                <h3>SANS Chemistry Resource</h3>
+                <p>Providing accessible information about chemical compounds and their structures</p>
+                <p>© 2025 SANS | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
 </html>
